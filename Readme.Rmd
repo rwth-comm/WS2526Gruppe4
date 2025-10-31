@@ -1,0 +1,14 @@
+---
+title: "Untitled"
+author: "GKO"
+date: "2025-10-30"
+output: md_document
+---
+
+# Teammitglieder 
+*GKO
+
+
+# Forschungsfrage 
+
+# Faktorenraum
