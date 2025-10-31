@@ -1,0 +1,7 @@
+# Teammitglieder
+
+\*GKO
+
+# Forschungsfrage
+
+# Faktorenraum

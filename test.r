@@ -1,1 +1,1 @@
-imjoimjijimj,övghgvhjbkhb
+# Gina Kötter hat die Hausaufgaben gemacht
