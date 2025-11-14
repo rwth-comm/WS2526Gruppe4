@@ -1,7 +1,12 @@
-# Teammitglieder
+## Teammitglieder
 
-\*GKO
+-   Gina Kötter
+-   Karolina Braun
+-   Samira Eisenberg
 
-# Forschungsfrage
+## Forschungsfrage
 
-# Faktorenraum
+“Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen
+Services der Kommunalverwaltung?”
+
+\##Faktorenraum ![Faktorenraum](Faktorenraum_SE_2026.png)

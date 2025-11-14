@@ -5,10 +5,13 @@ date: "2025-10-30"
 output: md_document
 ---
 
-# Teammitglieder 
-*GKO
+## Teammitglieder 
+*Gina Kötter
+*Karolina Braun 
+*Samira Eisenberg
 
 
-# Forschungsfrage 
+## Forschungsfrage 
+"Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen Services der Kommunalverwaltung?"
 
-# Faktorenraum
+![Faktorenraum](Faktorenraum_SE_2026.png)
