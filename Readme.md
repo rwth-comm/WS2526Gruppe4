@@ -1,17 +1,54 @@
 ## Teammitglieder
 
--   Gina Kötter
--   Karolina Braun
--   Samira Eisenberg
+*Gina Kötter *Karolina Braun \*Samira Eisenberg
 
 ## Forschungsfrage
 
 “Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen
 Services der Kommunalverwaltung?”
 
-## Faktorenraum
+![Faktorenraum](Faktorenraum_SE_2026.png) \##Hypothesen
 
-<figure>
-<img src="Faktorenraum_SE_2026.png" alt="Faktorenraum" />
-<figcaption aria-hidden="true">Faktorenraum</figcaption>
-</figure>
+### Unterschiedshypothesen
+
+-   Männer und Frauen unterscheiden sich in ihrer Nutzungsbereitschaft
+    von innovativen Services der Kommunalverwaltung.  
+-   Personen mit hohem Bildungsniveau und Personen mit niedrigem
+    Bildungsniveau unterscheiden sich in ihrer Nutzungsbereitschaft von
+    innovativen Services der Kommunalverwaltung.  
+-   Personen unterschiedlichen Alters unterscheiden sich in ihrer
+    Nutzungsbereitschaft von innovativen Services der
+    Kommunalverwaltung.
+
+### Unterschiedshypothese (MANCOVA)
+
+-   Personen unterschiedlicher Berufsgruppen unterscheiden sich in ihrer
+    Nutzungsbereitschaft gegenüber innovativen Services der
+    Kommunalverwaltung.
+
+### Zusammenhangshypothesen
+
+-   Es gibt einen Zusammenhang zwischen der Einstellung gegenüber
+    Innovation und der Nutzungsbereitschaft von innovativen Services der
+    Kommunalverwaltung.  
+-   Es gibt einen Zusammenhang zwischen dem Alter einer Person und der
+    Nutzungsbereitschaft von innovativen Services der
+    Kommunalverwaltung.  
+-   Es gibt einen Zusammenhang zwischen dem Vertrauen in Verwaltung und
+    der Nutzungsbereitschaft von innovativen Services der
+    Kommunalverwaltung.
+
+### Zusammenhangshypothese (Multiple lineare Regression)
+
+-   Die Technikaffinität, der wahrgenommene Nutzen, das Vertrauen in
+    Technologie sowie die Häufigkeit der bisherigen Servicenutzung
+    beeinflussen die Nutzungsbereitschaft innovativer kommunaler
+    Services.
+
+### Messinstrument
+
+[Technophobie](https://zis.gesis.org/skala/Sinkovics-Technophobie?redirect_url=https%253A%252F%252Fzis.gesis.org%252Fsearch%253Fsource%253D%257B%2522query%2522%253A%257B%2522bool%2522%253A%257B%2522must%2522%253A%255B%257B%2522query_string%2522%253A%257B%2522query%2522%253A%2522v)
+
+### Messinstrument
+
+[Technikbereitschaft](https://zis.gesis.org/skala/Neyer-Felber-Gebhardt-Kurzskala-Technikbereitschaft-%28TB,-technology-commitment%29?lang=de)
