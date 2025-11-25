@@ -18,13 +18,21 @@ Services der Kommunalverwaltung?”
     innovativen Services der Kommunalverwaltung.  
 -   Personen unterschiedlichen Alters unterscheiden sich in ihrer
     Nutzungsbereitschaft von innovativen Services der
-    Kommunalverwaltung.
+    Kommunalverwaltung.  
+
+<!-- -->
+
+    H3 ist okay, solange Sie nicht die selbe Hypothese als Zusammenhangshypothese haben. Trotzdem sollten Sie hier bitte die Gruppenabstufungen angeben.
 
 ### Unterschiedshypothese (MANCOVA)
 
 -   Personen unterschiedlicher Berufsgruppen unterscheiden sich in ihrer
     Nutzungsbereitschaft gegenüber innovativen Services der
     Kommunalverwaltung.
+
+<!-- -->
+
+    Das passt, nimmt Ihnen aber die Möglichkeit, einen Interaktionseffekt zu untersuchen. Im Hinblick auf die Klausur würde ich ihnen empfehlen, sich diese Möglichkeit nicht zu verbauen. Fügen Sie hierzu einfach eine weitere UV in die Hypothese hinzu. 
 
 ### Zusammenhangshypothesen
 
@@ -34,6 +42,11 @@ Services der Kommunalverwaltung?”
 -   Es gibt einen Zusammenhang zwischen dem Alter einer Person und der
     Nutzungsbereitschaft von innovativen Services der
     Kommunalverwaltung.  
+
+<!-- -->
+
+    Siehe oben ;-) Bitte formulieren Sie eine andere Unterschiedshypothese.
+
 -   Es gibt einen Zusammenhang zwischen dem Vertrauen in Verwaltung und
     der Nutzungsbereitschaft von innovativen Services der
     Kommunalverwaltung.
@@ -44,6 +57,10 @@ Services der Kommunalverwaltung?”
     Technologie sowie die Häufigkeit der bisherigen Servicenutzung
     beeinflussen die Nutzungsbereitschaft innovativer kommunaler
     Services.
+
+<!-- -->
+
+    Das passt, allerdings haben Sie relativ oft die Nutzungsbereitschaft von innovativen Sercives als AV, was ein bisschen nach p-Hacking aussieht (Erklärung später). Für diese Woche ist das noch absolut okay, später sollten Sie die Hypothesen eventuell nochmal anpassen und z.B. mit den Szenarien etwas variieren.
 
 ### Messinstrument
 
