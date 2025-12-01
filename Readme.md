@@ -11,56 +11,43 @@ Services der Kommunalverwaltung?”
 
 ### Unterschiedshypothesen
 
--   Männer und Frauen unterscheiden sich in ihrer Nutzungsbereitschaft
-    von innovativen Services der Kommunalverwaltung.  
--   Personen mit hohem Bildungsniveau und Personen mit niedrigem
-    Bildungsniveau unterscheiden sich in ihrer Nutzungsbereitschaft von
-    innovativen Services der Kommunalverwaltung.  
--   Personen unterschiedlichen Alters unterscheiden sich in ihrer
-    Nutzungsbereitschaft von innovativen Services der
-    Kommunalverwaltung.  
+**Geschlecht**  
+Männer und Frauen unterscheiden sich in ihrer Nutzungsbereitschaft von
+innovativen Services der Kommunalverwaltung.
 
-<!-- -->
+**Wohnort**  
+Personen aus städtischen und ländlichen Wohnorten unterscheiden sich in
+ihrer Nutzungsbereitschaft von innovativen Services der
+Kommunalverwaltung.
 
-    H3 ist okay, solange Sie nicht die selbe Hypothese als Zusammenhangshypothese haben. Trotzdem sollten Sie hier bitte die Gruppenabstufungen angeben.
+### Unterschiedshypothese für die MANCOVA
 
-### Unterschiedshypothese (MANCOVA)
-
--   Personen unterschiedlicher Berufsgruppen unterscheiden sich in ihrer
-    Nutzungsbereitschaft gegenüber innovativen Services der
-    Kommunalverwaltung.
-
-<!-- -->
-
-    Das passt, nimmt Ihnen aber die Möglichkeit, einen Interaktionseffekt zu untersuchen. Im Hinblick auf die Klausur würde ich ihnen empfehlen, sich diese Möglichkeit nicht zu verbauen. Fügen Sie hierzu einfach eine weitere UV in die Hypothese hinzu. 
+Personen unterschiedlichen Bildungsniveaus und unterschiedlicher
+Technikaffinität unterscheiden sich in ihrer Nutzungsbereitschaft
+gegenüber innovativen Services der Kommunalverwaltung. (Mediansplit)
 
 ### Zusammenhangshypothesen
 
--   Es gibt einen Zusammenhang zwischen der Einstellung gegenüber
-    Innovation und der Nutzungsbereitschaft von innovativen Services der
-    Kommunalverwaltung.  
--   Es gibt einen Zusammenhang zwischen dem Alter einer Person und der
-    Nutzungsbereitschaft von innovativen Services der
-    Kommunalverwaltung.  
+**Alter**  
+Es besteht ein Zusammenhang zwischen dem Alter einer Person und der
+Nutzungsbereitschaft gegenüber innovativen Services der
+Kommunalverwaltung.
 
-<!-- -->
+**Technophobie – Szenario A**  
+Es besteht ein Zusammenhang zwischen der Technophobie einer Person und
+der Nutzungsbereitschaft gegenüber innovativen Services der
+Kommunalverwaltung in Szenario A.
 
-    Siehe oben ;-) Bitte formulieren Sie eine andere Unterschiedshypothese.
+**Technophobie – Szenario B**  
+Es besteht ein Zusammenhang zwischen der Technophobie einer Person und
+der Nutzungsbereitschaft gegenüber innovativen Services der
+Kommunalverwaltung in Szenario B.
 
--   Es gibt einen Zusammenhang zwischen dem Vertrauen in Verwaltung und
-    der Nutzungsbereitschaft von innovativen Services der
-    Kommunalverwaltung.
+### Multiple lineare Regression
 
-### Zusammenhangshypothese (Multiple lineare Regression)
-
--   Die Technikaffinität, der wahrgenommene Nutzen, das Vertrauen in
-    Technologie sowie die Häufigkeit der bisherigen Servicenutzung
-    beeinflussen die Nutzungsbereitschaft innovativer kommunaler
-    Services.
-
-<!-- -->
-
-    Das passt, allerdings haben Sie relativ oft die Nutzungsbereitschaft von innovativen Sercives als AV, was ein bisschen nach p-Hacking aussieht (Erklärung später). Für diese Woche ist das noch absolut okay, später sollten Sie die Hypothesen eventuell nochmal anpassen und z.B. mit den Szenarien etwas variieren.
+Die Technikaffinität, der wahrgenommene Nutzen, das Vertrauen in
+Technologie sowie die Technophobie beeinflussen die Nutzungsbereitschaft
+innovativer kommunaler Services.
 
 ### Messinstrument
 
