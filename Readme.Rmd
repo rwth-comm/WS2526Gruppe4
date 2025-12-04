@@ -6,9 +6,9 @@ output: md_document
 ---
 
 ## Teammitglieder 
-*Gina Kötter
-*Karolina Braun 
-*Samira Eisenberg
+* Gina Kötter
+* Karolina Braun 
+* Samira Eisenberg
 
 
 ## Forschungsfrage 
