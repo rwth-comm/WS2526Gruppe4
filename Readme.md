@@ -9,7 +9,12 @@
 Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen
 Services der Kommunalverwaltung?
 
-![Faktorenraum](V2_Faktorenraum_SE_25:26.png) \## Hypothesen
+<figure>
+<img src="V2_Faktorenraum_SE_25:26" alt="Faktorenraum" />
+<figcaption aria-hidden="true">Faktorenraum</figcaption>
+</figure>
+
+## Hypothesen
 
 ### Unterschiedshypothesen
 
