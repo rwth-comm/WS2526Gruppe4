@@ -1,17 +1,17 @@
-## Teammitglieder
+### Teammitglieder
 
 -   Gina Kötter
 -   Karolina Braun
 -   Samira Eisenberg
 
-## Forschungsfrage
+### Forschungsfrage
 
 Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen
 Services der Kommunalverwaltung?
 
-![Faktorenraum](V2_Faktorenraum_SE_25:26.png) \## Hypothesen
+![Faktorenraum](V2_Faktorenraum_SE_25:26.png) \### Hypothesen
 
-# Unterschiedshypothesen
+## Unterschiedshypothesen
 
 **Geschlecht**  
 Männer und Frauen unterscheiden sich in ihrer Nutzungsbereitschaft von
@@ -22,13 +22,13 @@ Personen aus städtischen und ländlichen Wohnorten unterscheiden sich in
 ihrer Nutzungsbereitschaft von innovativen Services der
 Kommunalverwaltung.
 
-# Unterschiedshypothese für die MANCOVA
+## Unterschiedshypothese für die MANCOVA
 
 Personen unterschiedlichen Bildungsniveaus und unterschiedlicher
 Technikaffinität unterscheiden sich in ihrer Nutzungsbereitschaft
 gegenüber innovativen Services der Kommunalverwaltung. (Mediansplit)
 
-# Zusammenhangshypothesen
+## Zusammenhangshypothesen
 
 **Alter**  
 Es besteht ein Zusammenhang zwischen dem Alter einer Person und der
@@ -50,10 +50,10 @@ Die Technikbereitschaft, das Vertrauen in Technologie sowie die
 Technophobie beeinflussen gemeinsam die Nutzungsbereitschaft innovativer
 kommunaler Services.
 
-### Messinstrument
+## Messinstrument
 
 [Technophobie](https://zis.gesis.org/skala/Sinkovics-Technophobie?redirect_url=https%253A%252F%252Fzis.gesis.org%252Fsearch%253Fsource%253D%257B%2522query%2522%253A%257B%2522bool%2522%253A%257B%2522must%2522%253A%255B%257B%2522query_string%2522%253A%257B%2522query%2522%253A%2522v)
 
-### Messinstrument
+## Messinstrument
 
 [Technikbereitschaft](https://zis.gesis.org/skala/Neyer-Felber-Gebhardt-Kurzskala-Technikbereitschaft-%28TB,-technology-commitment%29?lang=de)
