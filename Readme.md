@@ -1,56 +1,54 @@
 ## Teammitglieder
 
-* Gina Kötter
-* Karolina Braun 
-* Samira Eisenberg
+-   Gina Kötter
+-   Karolina Braun
+-   Samira Eisenberg
 
 ## Forschungsfrage
 
-Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen Services
-der Kommunalverwaltung?
+Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen
+Services der Kommunalverwaltung?
 
-![Faktorenraum](V2_Faktorenraum_SE_25:26.png) 
+![Faktorenraum](V2_Faktorenraum_SE_25:26.png) \## Hypothesen
 
-### Hypothesen
+# Unterschiedshypothesen
 
-## Unterschiedshypothesen
-
-**H1-Geschlecht**  
+**Geschlecht**  
 Männer und Frauen unterscheiden sich in ihrer Nutzungsbereitschaft von
 innovativen Services der Kommunalverwaltung.
 
-**H2-Wohnort**  
+**Wohnort**  
 Personen aus städtischen und ländlichen Wohnorten unterscheiden sich in
 ihrer Nutzungsbereitschaft von innovativen Services der
 Kommunalverwaltung.
 
-### Unterschiedshypothese für die MANCOVA
+# Unterschiedshypothese für die MANCOVA
 
-Personen mit unterschiedlichem Bildungsniveau und unterschiedlicher
+Personen unterschiedlichen Bildungsniveaus und unterschiedlicher
 Technikaffinität unterscheiden sich in ihrer Nutzungsbereitschaft
 gegenüber innovativen Services der Kommunalverwaltung. (Mediansplit)
 
-### Zusammenhangshypothesen
+# Zusammenhangshypothesen
 
-**H4-Alter**  
+**Alter**  
 Es besteht ein Zusammenhang zwischen dem Alter einer Person und der
 Nutzungsbereitschaft gegenüber innovativen kommunalen Services.
 
-**H5-Technophobie – Szenario A**  
-Eine höhere Technophobie steht in Szenario A in einem negativen Zusammenhang
-mit der Nutzungsbereitschaft gegenüber innovativen Services der
-Kommunalverwaltung.
+**Technophobie – Szenario A**  
+Eine höhere Technophobie steht in Szenario A in einem negativen
+Zusammenhang mit der Nutzungsbereitschaft gegenüber innovativen Services
+der Kommunalverwaltung.
 
-**H6-Technophobie – Szenario B**  
-Eine höhere Technophobie steht in Szenario B in einem negativen Zusammenhang
-mit der Nutzungsbereitschaft gegenüber innovativen Services der
-Kommunalverwaltung.
+**Technophobie – Szenario B**  
+Eine höhere Technophobie steht in Szenario B in einem negativen
+Zusammenhang mit der Nutzungsbereitschaft gegenüber innovativen Services
+der Kommunalverwaltung.
 
-### Multiple lineare Regression
+# Multiple lineare Regression
 
-Die Technikbereitschaft, das Vertrauen in Technologie sowie die Technophobie
-beeinflussen gemeinsam die Nutzungsbereitschaft innovativer kommunaler 
-Services.
+Die Technikbereitschaft, das Vertrauen in Technologie sowie die
+Technophobie beeinflussen gemeinsam die Nutzungsbereitschaft innovativer
+kommunaler Services.
 
 ### Messinstrument
 
