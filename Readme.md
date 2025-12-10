@@ -11,39 +11,43 @@ Services der Kommunalverwaltung?”
 
 ### Unterschiedshypothesen
 
--   Männer und Frauen unterscheiden sich in ihrer Nutzungsbereitschaft
-    von innovativen Services der Kommunalverwaltung.  
--   Personen mit hohem Bildungsniveau und Personen mit niedrigem
-    Bildungsniveau unterscheiden sich in ihrer Nutzungsbereitschaft von
-    innovativen Services der Kommunalverwaltung.  
--   Personen unterschiedlichen Alters unterscheiden sich in ihrer
-    Nutzungsbereitschaft von innovativen Services der
-    Kommunalverwaltung.
+**Geschlecht**  
+Männer und Frauen unterscheiden sich in ihrer Nutzungsbereitschaft von
+innovativen Services der Kommunalverwaltung.
 
-### Unterschiedshypothese (MANCOVA)
+**Wohnort**  
+Personen aus städtischen und ländlichen Wohnorten unterscheiden sich in
+ihrer Nutzungsbereitschaft von innovativen Services der
+Kommunalverwaltung.
 
--   Personen unterschiedlicher Berufsgruppen unterscheiden sich in ihrer
-    Nutzungsbereitschaft gegenüber innovativen Services der
-    Kommunalverwaltung.
+### Unterschiedshypothese für die MANCOVA
+
+Personen unterschiedlichen Bildungsniveaus und unterschiedlicher
+Technikaffinität unterscheiden sich in ihrer Nutzungsbereitschaft
+gegenüber innovativen Services der Kommunalverwaltung. (Mediansplit)
 
 ### Zusammenhangshypothesen
 
--   Es gibt einen Zusammenhang zwischen der Einstellung gegenüber
-    Innovation und der Nutzungsbereitschaft von innovativen Services der
-    Kommunalverwaltung.  
--   Es gibt einen Zusammenhang zwischen dem Alter einer Person und der
-    Nutzungsbereitschaft von innovativen Services der
-    Kommunalverwaltung.  
--   Es gibt einen Zusammenhang zwischen dem Vertrauen in Verwaltung und
-    der Nutzungsbereitschaft von innovativen Services der
-    Kommunalverwaltung.
+**Alter**  
+Es besteht ein Zusammenhang zwischen dem Alter einer Person und der
+Nutzungsbereitschaft gegenüber innovativen Services der
+Kommunalverwaltung.
 
-### Zusammenhangshypothese (Multiple lineare Regression)
+**Technophobie – Szenario A**  
+Es besteht ein Zusammenhang zwischen der Technophobie einer Person und
+der Nutzungsbereitschaft gegenüber innovativen Services der
+Kommunalverwaltung in Szenario A.
 
--   Die Technikaffinität, der wahrgenommene Nutzen, das Vertrauen in
-    Technologie sowie die Häufigkeit der bisherigen Servicenutzung
-    beeinflussen die Nutzungsbereitschaft innovativer kommunaler
-    Services.
+**Technophobie – Szenario B**  
+Es besteht ein Zusammenhang zwischen der Technophobie einer Person und
+der Nutzungsbereitschaft gegenüber innovativen Services der
+Kommunalverwaltung in Szenario B.
+
+### Multiple lineare Regression
+
+Die Technikaffinität, der wahrgenommene Nutzen, das Vertrauen in
+Technologie sowie die Technophobie beeinflussen die Nutzungsbereitschaft
+innovativer kommunaler Services.
 
 ### Messinstrument
 
