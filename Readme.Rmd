@@ -14,7 +14,7 @@ output: md_document
 ## Forschungsfrage 
 Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen Services der Kommunalverwaltung?
 
-![Faktorenraum](V2_Faktorenraum_SE_25/26.png)
+![Faktorenraum](V2_Faktorenraum_SE_25:26.png)
 
 ## Hypothesen
 
