@@ -61,7 +61,9 @@ Wie müssen Effekte in Realität mindestens sein, damit Sie diese detektieren k�
 - Damit ein Effekt als real gilt, muss er unter den gleichen Bedingungen wiederholt auftreten.
 
 Wie viele ProbandInnen müssen Sie erheben für einen schwachen / mittleren/starken Effekt?
-Darauf gibt es keine universelle Antwort. Im Allgemeinen strebt man bei einer Umfrage eine Repräsentativität an. Damit eine Stichprobe repräsentativ ist, müssen die für den Untersuchungsgegenstand relevanten Merkmale in der Stichprobe im selben Verhältnis vorkommen, wie sie in der Grundgesamtheit vorkommen. Es kommt also auf den Forschungsgegenstand an. Für eine quantitative Forschung werden 100 bis 200 Teilnehmer/innen empfohlen, wobei mindestens 30 benötigt werden, um statistische Verfahren anwenden zu können. Für eine repräsentative Umfrage im Bundesland Nordrhein-Westfalen wäre beispielsweise eine Stichprobe von etwa 1.000 bis 1.500 Personen angemessen, um ein repräsentatives Ergebnis zu erhalten, da die Grundgesamtheit hier größer ist.
+
+- Darauf gibt es keine universelle Antwort. Im Allgemeinen strebt man bei einer Umfrage eine Repräsentativität an. Damit eine Stichprobe repräsentativ ist, müssen die für den Untersuchungsgegenstand relevanten Merkmale in der Stichprobe im selben Verhältnis vorkommen, wie sie in der Grundgesamtheit vorkommen. Es kommt also auf den Forschungsgegenstand an. 
+- Für eine quantitative Forschung werden 100 bis 200 Teilnehmer/innen empfohlen, wobei mindestens 30 benötigt werden, um statistische Verfahren anwenden zu können. Für eine repräsentative Umfrage im Bundesland Nordrhein-Westfalen wäre beispielsweise eine Stichprobe von etwa 1.000 bis 1.500 Personen angemessen, um ein repräsentatives Ergebnis zu erhalten, da die Grundgesamtheit hier größer ist.
 
 ## Messinstrument
 
