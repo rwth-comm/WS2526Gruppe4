@@ -6,8 +6,8 @@ df <- robo_care
 
 ## Übung 1: Histogram und Density-Plot ----
 # Mögliche Variablen: cse, diff_pref, technical_knowledge, privacy_concerns, automation_tendency, care_experience
-meine_variable <- df$care_experience
-hist(meine_variable)
+meine_variable <- df$technical_knowledge
+hist(meine_variable) 
 plot(density(meine_variable))
 
 ## Übung 2: Dichtefunktion mehrerer Variablen ----

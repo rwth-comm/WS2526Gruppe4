@@ -1,0 +1,58 @@
+variable;variable_old;item;text;info
+Duration (in seconds);Duration (in seconds);NA;Dauer (in Sekunden);"{""ImportId"":""duration""}"
+ResponseId;ResponseId;NA;Antwort-ID;"{""ImportId"":""_recordId""}"
+Age;age;NA;Wie alt sind Sie?;"{""ImportId"":""QID17_TEXT""}"
+Gender;gender;NA;Welchem Geschlecht gehören Sie an?;"{""ImportId"":""QID18""}"
+Edu;edu;NA;Bitte geben Sie Ihren höchsten Bildungsabschluss an.;"{""ImportId"":""QID20""}"
+JobType;ANAG;NA;Bitte geben Sie die Art Ihrer Beschäftigung an.;"{""ImportId"":""QID21""}"
+bf_1n;BF_1;Ich bin eher zurückhaltend, reserviert.;Nun folgen Fragen zu Ihrer Persönlichkeit.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich bin eher zurückhaltend, reserviert.;"{""ImportId"":""QID1_1""}"
+bf_2;BF_2;Ich schenke anderen leicht Vertrauen, glaube an das Gute in Menschen.;Nun folgen Fragen zu Ihrer Persönlichkeit.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich schenke anderen leicht Vertrauen, glaube an das Gute in Menschen.;"{""ImportId"":""QID1_2""}"
+bf_3n;BF_3;Ich bin bequem, neige zur Faulheit.;Nun folgen Fragen zu Ihrer Persönlichkeit.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich bin bequem, neige zur Faulheit.;"{""ImportId"":""QID1_3""}"
+bf_4n;BF_4;Ich bin entspannt, lasse mich durch Stress nicht aus der Ruhe bringen.;Nun folgen Fragen zu Ihrer Persönlichkeit.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich bin entspannt, lasse mich durch Stress nicht aus der Ruhe bringen.;"{""ImportId"":""QID1_4""}"
+bf_5n;BF_5;Ich habe nur wenig künstlerisches Interesse.;Nun folgen Fragen zu Ihrer Persönlichkeit.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich habe nur wenig künstlerisches Interesse.;"{""ImportId"":""QID1_5""}"
+bf_6;BF_6;Ich gehe aus mir heraus, bin gesellig.;Nun folgen Fragen zu Ihrer Persönlichkeit.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich gehe aus mir heraus, bin gesellig.;"{""ImportId"":""QID1_6""}"
+bf_7n;BF_7;Ich neige dazu, andere zu kritisieren.;Nun folgen Fragen zu Ihrer Persönlichkeit.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich neige dazu, andere zu kritisieren.;"{""ImportId"":""QID1_7""}"
+bf_8;BF_8;Ich erledige Aufgaben gründlich.;Nun folgen Fragen zu Ihrer Persönlichkeit.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich erledige Aufgaben gründlich.;"{""ImportId"":""QID1_8""}"
+bf_9;BF_9;Ich werde leicht nervös und unsicher.;Nun folgen Fragen zu Ihrer Persönlichkeit.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich werde leicht nervös und unsicher.;"{""ImportId"":""QID1_9""}"
+bf_10;BF_10;Ich habe eine aktive Vorstellungskraft, bin phantasievoll.;Nun folgen Fragen zu Ihrer Persönlichkeit.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich habe eine aktive Vorstellungskraft, bin phantasievoll.;"{""ImportId"":""QID1_10""}"
+ati_1;ati_1;Ich beschäftige mich gern genauer mit technischen Systemen.;"Im Folgenden geht
+es um ""technische Systeme"" im Alltag. Damit sind sowohl Apps und andere Software-Anwendungen, als auch digitale
+Geräte (z.B. Handy, Computer, Fernseher, Auto-Navigation) gemeint. - Ich beschäftige mich gern genauer mit technischen Systemen.";"{""ImportId"":""QID32_1""}"
+ati_2;ati_2;Ich probiere gern die Funktionen neuer technischer Systeme aus.;"Im Folgenden geht
+es um ""technische Systeme"" im Alltag. Damit sind sowohl Apps und andere Software-Anwendungen, als auch digitale
+Geräte (z.B. Handy, Computer, Fernseher, Auto-Navigation) gemeint. - Ich probiere gern die Funktionen neuer technischer Systeme aus.";"{""ImportId"":""QID32_2""}"
+ati_3n;ati_3;In erster Linie beschäftige ich mich mit technischen Systemen, weil ich muss.;"Im Folgenden geht
+es um ""technische Systeme"" im Alltag. Damit sind sowohl Apps und andere Software-Anwendungen, als auch digitale
+Geräte (z.B. Handy, Computer, Fernseher, Auto-Navigation) gemeint. - In erster Linie beschäftige ich mich mit technischen Systemen, weil ich muss.";"{""ImportId"":""QID32_3""}"
+ati_4;ati_4;Wenn ich ein neues technisches System vor mir habe, probiere ich es intensiv aus.;"Im Folgenden geht
+es um ""technische Systeme"" im Alltag. Damit sind sowohl Apps und andere Software-Anwendungen, als auch digitale
+Geräte (z.B. Handy, Computer, Fernseher, Auto-Navigation) gemeint. - Wenn ich ein neues technisches System vor mir habe, probiere ich es intensiv aus.";"{""ImportId"":""QID32_4""}"
+ati_5;ati_5;Ich verbringe sehr gern Zeit mit dem Kennenlernen eines neuen technischen Systems.;"Im Folgenden geht
+es um ""technische Systeme"" im Alltag. Damit sind sowohl Apps und andere Software-Anwendungen, als auch digitale
+Geräte (z.B. Handy, Computer, Fernseher, Auto-Navigation) gemeint. - Ich verbringe sehr gern Zeit mit dem Kennenlernen eines neuen technischen Systems.";"{""ImportId"":""QID32_5""}"
+ati_6n;ati_6;Es genügt mir, dass ein technisches System funktioniert, mir ist es egal, wie oder warum.;"Im Folgenden geht
+es um ""technische Systeme"" im Alltag. Damit sind sowohl Apps und andere Software-Anwendungen, als auch digitale
+Geräte (z.B. Handy, Computer, Fernseher, Auto-Navigation) gemeint. - Es genügt mir, dass ein technisches System funktioniert, mir ist es egal, wie oder warum.";"{""ImportId"":""QID32_6""}"
+ati_7;ati_7;Ich versuche zu verstehen, wie ein technisches System genau  funktioniert.;"Im Folgenden geht
+es um ""technische Systeme"" im Alltag. Damit sind sowohl Apps und andere Software-Anwendungen, als auch digitale
+Geräte (z.B. Handy, Computer, Fernseher, Auto-Navigation) gemeint. - Ich versuche zu verstehen, wie ein technisches System genau  funktioniert.";"{""ImportId"":""QID32_7""}"
+ati_8n;ati_8;Es genügt mir, die Grundfunktionen eines technischen Systems zu kennen.;"Im Folgenden geht
+es um ""technische Systeme"" im Alltag. Damit sind sowohl Apps und andere Software-Anwendungen, als auch digitale
+Geräte (z.B. Handy, Computer, Fernseher, Auto-Navigation) gemeint. - Es genügt mir, die Grundfunktionen eines technischen Systems zu kennen.";"{""ImportId"":""QID32_8""}"
+ati_9;ati_9;Ich versuche, die Möglichkeiten eines technischen Systems vollständig auszunutzen.;"Im Folgenden geht
+es um ""technische Systeme"" im Alltag. Damit sind sowohl Apps und andere Software-Anwendungen, als auch digitale
+Geräte (z.B. Handy, Computer, Fernseher, Auto-Navigation) gemeint. - Ich versuche, die Möglichkeiten eines technischen Systems vollständig auszunutzen.";"{""ImportId"":""QID32_9""}"
+wrfq_1;wrfq_1;Ich nutze Chancen bei der Arbeit, um das Beste für meine Weiterentwicklung zu erreichen.;In diesem Abschnitt würden wir gerne etwas über den Fokus ihrer Motivation erfahren.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich nutze Chancen bei der Arbeit, um das Beste für meine Weiterentwicklung zu erreichen.;"{""ImportId"":""QID29_1""}"
+wrfq_2;wrfq_2;Ich neige dazu, Risiken bei der Arbeit einzugehen, um Erfolg zu haben.;In diesem Abschnitt würden wir gerne etwas über den Fokus ihrer Motivation erfahren.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich neige dazu, Risiken bei der Arbeit einzugehen, um Erfolg zu haben.;"{""ImportId"":""QID29_2""}"
+wrfq_3;wrfq_3;Wenn mein Job mir keine Weiterentwicklungsmöglichkeiten bieten würde, würde ich mich nach einem neuen Job umsehen.;In diesem Abschnitt würden wir gerne etwas über den Fokus ihrer Motivation erfahren.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Wenn mein Job mir keine Weiterentwicklungsmöglichkeiten bieten würde, würde ich mich nach einem neuen Job umsehen.;"{""ImportId"":""QID29_3""}"
+wrfq_4;wrfq_4;Die Chance auf Weiterentwicklung ist ein wichtiger Faktor für mich bei der Arbeitsplatzsuche.;In diesem Abschnitt würden wir gerne etwas über den Fokus ihrer Motivation erfahren.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Die Chance auf Weiterentwicklung ist ein wichtiger Faktor für mich bei der Arbeitsplatzsuche.;"{""ImportId"":""QID29_4""}"
+wrfq_5;wrfq_5;Ich konzentriere mich darauf, meine Arbeitsaufgaben korrekt abzuschließen, um meinen Arbeitsplatz zu sichern.;In diesem Abschnitt würden wir gerne etwas über den Fokus ihrer Motivation erfahren.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Ich konzentriere mich darauf, meine Arbeitsaufgaben korrekt abzuschließen, um meinen Arbeitsplatz zu sichern.;"{""ImportId"":""QID29_5""}"
+wrfq_6;wrfq_6;Bei der Arbeit konzentriere ich mich darauf, meine Aufgabenbereiche vollständig auszufüllen.;In diesem Abschnitt würden wir gerne etwas über den Fokus ihrer Motivation erfahren.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Bei der Arbeit konzentriere ich mich darauf, meine Aufgabenbereiche vollständig auszufüllen.;"{""ImportId"":""QID29_6""}"
+wrfq_7;wrfq_7;Meine Verpflichtungen auf der Arbeit zu erfüllen ist sehr wichtig für mich.;In diesem Abschnitt würden wir gerne etwas über den Fokus ihrer Motivation erfahren.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Meine Verpflichtungen auf der Arbeit zu erfüllen ist sehr wichtig für mich.;"{""ImportId"":""QID29_7""}"
+wrfq_8;wrfq_8;Normalerweise entscheide ich selbst, wie ich meine Aufgaben erledige.;In diesem Abschnitt würden wir gerne etwas über den Fokus ihrer Motivation erfahren.Inwieweit treffen die folgenden Aussagen auf Sie zu? - Normalerweise entscheide ich selbst, wie ich meine Aufgaben erledige.;"{""ImportId"":""QID29_9""}"
+wrfq_9;wrfq_9;In der Regel versuche ich, auf der Arbeit neue Dinge zu lernen.;In diesem Abschnitt würden wir gerne etwas über den Fokus ihrer Motivation erfahren.Inwieweit treffen die folgenden Aussagen auf Sie zu? - In der Regel versuche ich, auf der Arbeit neue Dinge zu lernen.;"{""ImportId"":""QID29_10""}"
+svi_1n;commitment + goals_1;Ich bin nicht bereit, für den Erfolg dieses Veränderungsprozesses zu kämpfen.;Wie würden Sie den Veränderungen gegenüberstehen, wenn Ihr Arbeitsplatz digitalisiert werden würde?Bitte kreuzen Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen. - Ich bin nicht bereit, für den Erfolg dieses Veränderungsprozesses zu kämpfen.;"{""ImportId"":""QID35_1""}"
+svi_2n;commitment + goals_2;Ich bin nicht bereit, mich für den Erfolg dieses Veränderungsprozesses über die normale Anforderung hinaus zu engagieren.;Wie würden Sie den Veränderungen gegenüberstehen, wenn Ihr Arbeitsplatz digitalisiert werden würde?Bitte kreuzen Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen. - Ich bin nicht bereit, mich für den Erfolg dieses Veränderungsprozesses über die normale Anforderung hinaus zu engagieren.;"{""ImportId"":""QID35_2""}"
+svi_3;commitment + goals_3;Ich will meine Ziele in diesem Veränderungsprozess unbedingt erreichen.;Wie würden Sie den Veränderungen gegenüberstehen, wenn Ihr Arbeitsplatz digitalisiert werden würde?Bitte kreuzen Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen. - Ich will meine Ziele in diesem Veränderungsprozess unbedingt erreichen.;"{""ImportId"":""QID35_3""}"
+svi_4n;commitment + goals_4;Ich fühle keinen starken Drang in mir, durch meine Aktivitäten in diesem Veränderungsprozess diesen zu unterstützen.;Wie würden Sie den Veränderungen gegenüberstehen, wenn Ihr Arbeitsplatz digitalisiert werden würde?Bitte kreuzen Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen. - Ich fühle keinen starken Drang in mir, durch meine Aktivitäten in diesem Veränderungsprozess diesen zu unterstützen.;"{""ImportId"":""QID35_4""}"
+svi_5;commitment + goals_5;Ich habe meine Ziele in diesem Veränderungsprozess klar vor Augen.;Wie würden Sie den Veränderungen gegenüberstehen, wenn Ihr Arbeitsplatz digitalisiert werden würde?Bitte kreuzen Sie an, inwieweit die folgenden Aussagen auf Sie zutreffen. - Ich habe meine Ziele in diesem Veränderungsprozess klar vor Augen.;"{""ImportId"":""QID35_5""}"
