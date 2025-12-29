@@ -32,13 +32,18 @@ library(ggplot2)
 
 library(ggplot2)
 
-df
-ggplot() +
- aes(x = ATI, y = Gender) +
- geom_boxplot(fill = "#112446") +
- labs(x = " ", y = " ", title = " ", 
- subtitle = " ", caption = " ") +
- theme_minimal()
-
+df %>% 
+  filter(Gender == "Männlich" | Gender == "Weiblich") %>% 
+  ggplot() +
+  aes(x = ATI, y = Gender) +
+  geom_boxplot(fill = aachen_color("blue75", "red75")) +
+  labs(x = "ATI [1-6]", 
+       y = "Geschlecht", 
+       title = "Männer haben deskriptiv einen höheren KUT als Frauen", 
+       subtitle = "Deskriptiver Vergleich im Boxplot", 
+       caption = "Punkte zeigen Ausreißer") +
+  coord_flip() +
+  scale_x_continuous(limits = c(1,6), breaks = c(1:6)) +
+  theme_minimal()
 
 ggsave(filename = "boxplot.png", width = 15, height = 12, units = "cm")

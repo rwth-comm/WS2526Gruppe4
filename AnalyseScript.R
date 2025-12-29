@@ -9,10 +9,28 @@ raw <-load_qualtrics_csv("data/datacleaning_Beispieldaten.csv")
 # Rohdaten filtern ----
 raw %>% 
   filter (Progress == 100) %>% 
-  filter(Status == 4) -> raw
-
+  filter(Status == 2) -> raw
+names(raw)
+names(codebook)
 # Überflüssige Variablen entfernen ----
+codebook <- read_codebook("data/codebook_final.csv")
+
+codebook.short <- codebook %>%
+  filter(original_variable %in% names(raw.short))
+
+names(raw.short) <- codebook.short$variable
+
 raw.short <- raw[,c(6,9,18:54)] 
+raw.short <- raw %>%
+  select(
+    age,
+    gender,
+    edu,
+    starts_with("ati"),
+    starts_with("svi"),
+    starts_with("wrfq"),
+    starts_with("use"))
+
 
 # Variablen umbenennen ----
 generate_codebook(raw.short, "data/datacleaning_Beispieldaten.csv", "data/codebook.csv")
