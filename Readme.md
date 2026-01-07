@@ -71,6 +71,12 @@ Wie viele ProbandInnen müssen Sie erheben für einen schwachen / mittleren/star
 <img width="1157" height="759" alt="image" src="https://github.com/user-attachments/assets/7c30cfd9-fbb9-4281-af2a-2f9a70b3c7fd" />
 <img width="1157" height="759" alt="image" src="https://github.com/user-attachments/assets/87f20499-0591-4d11-b323-26b5641a9fd2" />
 
+## Balkendiagramme
+
+<img width="1157" height="759" alt="image" src="https://github.com/user-attachments/assets/f55f6071-099b-422a-9029-561d85a3c69e" />
+<img width="1157" height="759" alt="image" src="https://github.com/user-attachments/assets/51c3adcf-56be-49e1-a394-e35f6a52ccf8" />
+<img width="1157" height="759" alt="image" src="https://github.com/user-attachments/assets/aae09b59-5ec5-4fd5-ae8b-c996cfb38f27" />
+
 ## Messinstrument
 
 [Technophobie](https://zis.gesis.org/skala/Sinkovics-Technophobie?redirect_url=https%253A%252F%252Fzis.gesis.org%252Fsearch%253Fsource%253D%257B%2522query%2522%253A%257B%2522bool%2522%253A%257B%2522must%2522%253A%255B%257B%2522query_string%2522%253A%257B%2522query%2522%253A%2522v)
