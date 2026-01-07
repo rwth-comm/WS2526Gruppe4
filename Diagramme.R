@@ -103,7 +103,7 @@ ggsave("exampleInteraction.png", width = 9, height = 6)
 
 ggplot(df) +
   aes(x = cse, y = technical_knowledge) +
-  geom_point(shape = "circle", size = 1.5, colour = rwthcolor$turquois) +
+  geom_point(shape = "circle", size = 1.5, colour = rwthcolor$orange) +
   geom_smooth(method = "lm", color = rwthcolor$lightblue) +
   scale_x_continuous(breaks = c(1:6), limits = c(1,6)) +
   scale_y_continuous(breaks = c(1:6), limits = c(1,6)) +

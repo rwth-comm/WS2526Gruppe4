@@ -7,18 +7,17 @@ source("qualtricshelpers.R")
 raw <-load_qualtrics_csv("data/datacleaning_Beispieldaten.csv")
 
 # Rohdaten filtern ----
-raw %>% 
-  filter (Progress == 100) %>% 
-  filter(Status == 2) -> raw
+raw <- load_qualtrics_csv("data/datacleaning_Beispieldaten.csv") %>%
+  filter(Progress == 100, Status == 2)
+
 names(raw)
 names(codebook)
 # Überflüssige Variablen entfernen ----
-codebook <- read_codebook("data/codebook_final.csv")
+codebook_final <- read_codebook("data/codebook_final.csv")
 
-codebook.short <- codebook %>%
-  filter(original_variable %in% names(raw.short))
+stopifnot(ncol(raw.short) == nrow(codebook_final))
 
-names(raw.short) <- codebook.short$variable
+names(raw.short) <- codebook_final$variable
 
 raw.short <- raw[,c(6,9,18:54)] 
 raw.short <- raw %>%
