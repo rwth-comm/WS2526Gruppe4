@@ -17,7 +17,7 @@ t.test( filter(df, gender == "male")$cse, filter(df, gender == "female")$cse)
 
 
 # Balkendiagramm. ----
-robo_care %>% 
+df %>% 
   filter(gender != "rather not say") %>%
   group_by(gender) %>% 
   summarise(mean_cse = mean(cse)-1, sem_cse = std.error(cse)) %>%
