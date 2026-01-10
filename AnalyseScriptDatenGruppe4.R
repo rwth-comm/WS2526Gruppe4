@@ -64,19 +64,19 @@ raw.short.quality %>%
 # Skalenwerte berechnen ----
 
 schluesselliste <- list(
-  ATI          = c("ATI_1","ATI_2","-ATI_3n","-ATI_4n"),
-  TrustTech    = c("-TIA_1n","TIA_2","TIA_3"),
-  Technophobie = c("TP_1","TP_2","TP_3","TP_4","TP_5","TP_6","-TP_7n","-TP_8n","-TP_9n"),
+  ATI          = c("ati_1","ati_2","-ati_3n","-ati_4n"),
+  TrustTech    = c("-tia_1n","tia_2","tia_3"),
+  Technophobie = c("tp_1","tp_2","tp_3","tp_4","tp_5","tp_6","-tp_7n","-tp_8n","-tp_9n"),
   
-  NB_Baseline  = c("Q21_1","Q21_2","Q21_3"),
-  NB_Public    = c("Q23_1","Q23_2","Q23_3"),
-  NB_Private   = c("Q22_1","Q22_2","Q22_3"),
-  NB_Coop      = c("Q24_1","Q24_2","Q24_3"),
+  NB_Baseline  = c("q21_1","q21_2","q21_3"),
+  NB_Public    = c("q23_1","q23_2","q23_3"),
+  NB_Private   = c("q22_1","q22_2","q22_3"),
+  NB_Coop      = c("q24_1","q24_2","q24_3"),
   
-  NB_General   = c("Q21_1","Q21_2","Q21_3",
-                   "Q23_1","Q23_2","Q23_3",
-                   "Q22_1","Q22_2","Q22_3",
-                   "Q24_1","Q24_2","Q24_3")
+  NB_General   = c("q21_1","q21_2","q21_3",
+                   "q23_1","q23_2","q23_3",
+                   "q22_1","q22_2","q22_3",
+                   "q24_1","q24_2","q24_3")
 )
 
 scores <- scoreItems(schluesselliste, items = raw.short, min = 1, max = 6)

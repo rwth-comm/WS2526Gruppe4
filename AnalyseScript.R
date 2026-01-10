@@ -5,7 +5,7 @@ library(psych)
 source("qualtricshelpers.R")
 
 # Daten einlesen ----
-raw <- load_qualtrics_csv("data/datacleaning_Beispieldaten.cvs")
+raw <- load_qualtrics_csv("data/datacleaning_Beispieldaten.csv")
 
 
 # Rohdaten filtern ----
@@ -17,7 +17,7 @@ raw %>%
 raw.short <- raw[,c(6,9,18:54)]
 
 # Variablen umbenennen ----
-generate_codebook(raw.short, "data/datacleaning_Beispieldaten.cvs", "data/codebook.csv")
+generate_codebook(raw.short, "data/datacleaning_Beispieldaten.csv", "data/codebook.csv")
 codebook <- read_codebook("data/codebook_final.csv")
 names(raw.short) <- codebook$variable
 
