@@ -69,11 +69,11 @@ df %>%
   geom_errorbar(width = 0.2) +
   ylim(0,6) +
   theme_dark() +
-  labs(title = "", 
-       subtitle = "", 
-       x = "",
-       y = "",
-       fill = "",
+  labs(title = "Männer und Frauen unterscheiden sich in ihrer Nutzungsbereitschaft", 
+       subtitle = "Balkendiagramm: Nutzungsbereitschaft im Vergleich zwischen Männern und Frauen", 
+       x = "Geschlecht",
+       y = "Nutzungsbereitschaft",
+       fill = "Geschlecht",
        caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes") +
   NULL
 ```
@@ -104,10 +104,10 @@ df %>%
   geom_errorbar(width = 0.2) +
   ylim(0,6) +
   theme_dark() +
-  labs(title = "", 
-       subtitle = "", 
-       x = "",
-       y = "",
+  labs(title = "Personen aus städtischen und ländlichen Wohnorten unterscheiden sich in ihrer Nutzungsbereitschaft", 
+       subtitle = "Balkendiagramm: Nutzungsbereitschaft im Vergleich zwischen städtischen und nicht-städischen Wohnorten", 
+       x = "Wohnort",
+       y = "Nutzungsbereitschaft",
        fill = "",
        caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes") +
   NULL
@@ -117,6 +117,86 @@ df %>%
 ### Unterschiedshypothese für die MANCOVA
 
 Personen unterschiedlichen Bildungsniveaus und unterschiedlicher Technikaffinität unterscheiden sich in ihrer Nutzungsbereitschaft gegenüber innovativen Services der Kommunalverwaltung. (Mediansplit)
+```{r}
+df$Edu %>% 
+  recode(`((noch) keinen Schulabschluss)` = "niedrigeres Bildungsniveau",
+         `Hauptschulabschluss` = "niedrigeres Bildungsniveau",
+         `Realschulabschluss` = "niedrigeres Bildungsniveau",
+         `Abitur` = "höheres Bildungsniveau",
+         `Hochschulabschluss` = "höheres Bildungsniveau") %>%
+  as.factor() -> df$Edu2
+
+df_noedu <- filter(df, df$Edu2 == "niedrigeres Bildungsniveau")
+df_yesedu <- filter(df,df$Edu2 == "höheres Bildungsniveau")
+
+jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "ATI"))
+
+jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "ATI"), 
+           emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu"), c("ATI"),
+                                                             c("Edu", "ATI"),
+                                                             c("ATI", "Edu")))
+
+result <- jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "ATI"), 
+                     emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu"), c("ATI"),
+                                                                       c("Edu", "ATI"),
+                                                                       c("ATI", "Edu")))
+
+haupteffekt1 <- result$emm[[1]]$emmTable$asDF
+haupteffekt2 <- result$emm[[2]]$emmTable$asDF
+interaktionseffekt <- result$emm[[3]]$emmTable$asDF
+
+haupteffekt1 %>%
+  ggplot() +
+  aes(x = Edu, y = mean, colour = Edu, ymin = lower, ymax = upper ) +
+  geom_errorbar(width = 0.2, colour = aachen_color("black")) +
+  geom_point(size = 3) +
+  scale_colour_manual(values=aachen_color("black", "black")) + 
+  scale_x_discrete() +
+  ylim(0,10) +
+  theme_gray() +
+  labs(title = "Faktor: Edu", 
+       subtitle = "", 
+       x = "",
+       y = "",
+       colour = "",
+       caption = "") +
+  NULL
+
+haupteffekt2 %>%
+  ggplot() +
+  aes(x = ATI, y = mean, colour = ATI, ymin = lower, ymax = upper ) +
+  geom_errorbar(width = 0.2, colour = aachen_color("black")) +
+  geom_point(size = 3) +
+  scale_colour_manual(values=aachen_color("black", "black")) + 
+  scale_x_discrete() +
+  ylim(0,10) +
+  theme_gray() +
+  labs(title = "Faktor: ATI", 
+       subtitle = "", 
+       x = "",
+       y = "",
+       colour = "",
+       caption = "") +
+  NULL
+
+interaktionseffekt %>% 
+  ggplot() +
+  aes(x = ATI, y = mean, colour = ATI, ymin = lower, ymax = upper, group = ATI ) +
+  geom_errorbar(width = 0.2, colour = aachen_color("black")) +
+  geom_point(size = 3) +
+  geom_line() +
+  scale_colour_manual(values=aachen_color("red","blue")) + 
+  ylim(0,10) +
+  theme_gray() +
+  labs(title = "Faktor: ATI", 
+       subtitle = "", 
+       x = "",
+       y = "Lust zu Tanzen [0 - 10]",
+       colour = "",
+       caption = "") +
+  theme(title = element_text(face = "bold", size = 20), 
+        axis.text.x = element_text(face = "bold", size = 20))
+```
 
 ### Zusammenhangshypothesen
 
@@ -131,10 +211,10 @@ ggplot(df) +
   geom_smooth(method = "lm", color = rwthcolor$lightblue) +
   #scale_x_continuous(breaks = c(1:6), limits = c(0.5,6.5)) +
   #scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
-  labs(x = "", 
-       y = "", 
-       title = "", 
-       subtitle = "", 
+  labs(x = "Alter", 
+       y = "Nutzungsbereitschaft", 
+       title = "Es besteht ein Zusammenhang zwischen dem Alter einer Person und der Nutzungsbereitschaft", 
+       subtitle = "Jitterplot: Vergleich Nutzungsbereitschaft zwischen Personen unterschiedlchen Alters", 
        caption = "") +
   theme_minimal()
 ```
@@ -151,11 +231,11 @@ ggplot(df) +
   geom_smooth(method = "lm", color = rwthcolor$lightblue) +
   #scale_x_continuous(breaks = c(1:6), limits = c(0.5,6.5)) +
   #scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
-  labs(x = "", 
-       y = "", 
-       title = "", 
-       subtitle = "", 
-       caption = "") +
+  labs(x = "Technophobie", 
+       y = "Nutzungsbereitschaft", 
+       title = "Eine höhere Technophobie hat einen negativen Zusammenhang zur Nutzungsbereitschaft", 
+       subtitle = "Jitterplot: Zusammenhang von Nutzungsbereitschaft und Technophobie ", 
+       caption = "Szenario B") +
   theme_minimal()
 ```
 
@@ -171,11 +251,11 @@ ggplot(df) +
   geom_smooth(method = "lm", color = rwthcolor$lightblue) +
   #scale_x_continuous(breaks = c(1:6), limits = c(0.5,6.5)) +
   #scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
-  labs(x = "", 
-       y = "", 
-       title = "", 
-       subtitle = "", 
-       caption = "") +
+  labs(x = "Technophobie", 
+       y = "Nutzungsbereitschaft", 
+       title = "Eine höhere Technophobie hat einen negative Zusammenhang zur Nutzungsbereitschaft", 
+       subtitle = "Jitterplot: Zusammenhang von Nutzungsbereitschaft und Technophobie", 
+       caption = "Szenario C") +
   theme_minimal()
 ```
 
