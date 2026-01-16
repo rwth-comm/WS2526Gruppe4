@@ -1,7 +1,7 @@
 # Pakete aktivieren ----
 library(tidyverse)
 library(psych)
-#library(hcictools)
+library(hcictools)
 source("qualtricshelpers.R")
 
 # Daten einlesen ----
@@ -50,16 +50,36 @@ raw.short$Urban %>%
          `3` = "Großstadt") %>%
   as.factor() -> raw.short$Urban
 
+
+raw.short$q23_1 %>% 
+  recode(`43` = 1,
+         `51` = 2,
+         `44` = 3,
+         `45` = 4,
+         `47` = 5,
+         `48` = 6) %>%
+  as.numeric() -> raw.short$q23_1
+
+raw.short$q23_2 %>% 
+  recode(`43` = 1,
+         `51` = 2,
+         `44` = 3,
+         `45` = 4,
+         `47` = 5,
+         `48` = 6) %>%
+  as.numeric() -> raw.short$q23_2
+
+raw.short$q23_3 %>% 
+  recode(`43` = 1,
+         `51` = 2,
+         `44` = 3,
+         `45` = 4,
+         `47` = 5,
+         `48` = 6) %>%
+  as.numeric() -> raw.short$q23_3
+
 # Qualitätskontrolle ----
 
-raw.short.quality <- careless_indices(raw.short, likert_vector = c(5:ncol(raw.short)), speeder_analysis = "median/2")
-
-raw.short.quality %>% 
-  filter(speeder_flag == FALSE) %>% 
-  filter(careless_longstr < 20) %>% 
-  filter(careless_psychsyn > 0) %>% 
-  filter(careless_psychant < 0) %>% 
-  filter(careless_mahadflag == FALSE) -> raw.short.quality
 
 # Skalenwerte berechnen ----
 
@@ -80,11 +100,9 @@ schluesselliste <- list(
 )
 
 scores <- scoreItems(schluesselliste, items = raw.short, min = 1, max = 6)
-scores.quality <- scoreItems(schluesselliste, items = raw.short.quality, min = 1, max = 6)
 scores$alpha
-scores.quality$alpha
   
-data <- bind_cols(raw.short.quality, scores.quality$scores)
+data <- bind_cols(raw.short, scores$scores)
   
 # Daten exportieren ----
 write_rds(data, "data/data1a.rds")

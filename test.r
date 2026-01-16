@@ -1,1 +1,0 @@
-# Gina Kötter hat die Hausaufgaben gemacht

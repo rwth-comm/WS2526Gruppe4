@@ -3,8 +3,8 @@
 #install.packages("tidyverse")
 #install.packages("psych")
 #install.packages("plotrix")
-#install.packages("remotes")
-#remotes::install_github("statisticsforsocialscience/dataforsocialscience")
+install.packages("remotes")
+remotes::install_github("statisticsforsocialscience/dataforsocialscience")
 
 # Pakete aktivieren
 library(tidyverse)

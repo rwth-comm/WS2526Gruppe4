@@ -5,6 +5,23 @@ date: "2025-10-30"
 output: md_document
 ---
 
+```{r}
+library(tidyverse)
+library(dataforsocialscience)
+library(hcictools)
+library(tidyverse)
+library(plotrix)
+library(jmv)
+library(ggthemes)
+library(ggplot2)
+
+rwthcolor <- hcictools::rwth.colorpalette()
+
+df <- readRDS("data/data1a.rds")
+
+```
+
+
 ## Teammitglieder 
 * Gina Kötter
 * Karolina Braun 
@@ -15,6 +32,20 @@ output: md_document
 Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen Services der Kommunalverwaltung?
 
 ![Faktorenraum](V2_Faktorenraum_SE_26.png)
+```{r}
+ggplot(df) +
+  aes(x = Age) +
+  geom_histogram(bins = 30L, fill = rwthcolor$blue) +
+  geom_vline(xintercept = mean(df$Age, na.rm = TRUE)) +
+  geom_text(x = mean(df$Age, na.rm = TRUE), y = 50, label = paste0("M = ", round(mean(df$Age, na.rm = TRUE), 2)), angle = 90 , vjust = 1.5) +
+  labs(x = "Alter in Jahren", 
+       y = "Anzahl", 
+       title = paste0("Altersverteilung n = (", nrow(df), ")"), 
+       subtitle = "Histogramm der Altersverteilung", 
+       caption = "30 Bins") +
+  theme_minimal()
+```
+
 
 ## Hypothesen
 
@@ -22,24 +53,212 @@ Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen Services d
 
 **Geschlecht**  
 Männer und Frauen unterscheiden sich in ihrer Nutzungsbereitschaft von innovativen Services der Kommunalverwaltung.
+```{r}
+df_male <- filter(df, df$Gender == "Männlich")
+df_female <- filter(df,df$Gender == "Weiblich")
+t.test(df_male$NB_General,df_female$NB_General)
+
+df %>% 
+  filter(!is.na(Gender)) %>% 
+  group_by(Gender) %>% 
+  summarise(mean_NB = mean(NB_General)-1, sem_NB = std.error(NB_General)) %>%
+  ggplot() +
+  aes(x = Gender, fill = Gender, weight = mean_NB, ymin = mean_NB - sem_NB, ymax = mean_NB + sem_NB ) +
+  geom_bar( width = 0.5) +
+  scale_fill_manual(values=c(rwthcolor$lightblue, rwthcolor$red)) + 
+  geom_errorbar(width = 0.2) +
+  ylim(0,6) +
+  theme_dark() +
+  labs(title = "Männer und Frauen unterscheiden sich in ihrer Nutzungsbereitschaft", 
+       subtitle = "Balkendiagramm: Nutzungsbereitschaft im Vergleich zwischen Männern und Frauen", 
+       x = "Geschlecht",
+       y = "Nutzungsbereitschaft",
+       fill = "Geschlecht",
+       caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes") +
+  NULL
+```
+
 
 **Wohnort**  
 Personen aus städtischen und ländlichen Wohnorten unterscheiden sich in ihrer Nutzungsbereitschaft von innovativen Services der Kommunalverwaltung.
+```{r}
+
+df$Urban %>% 
+  recode(`Ländlich` = "keine Stadt",
+         `Vorort/Kleinstadt` = "keine Stadt",
+         `Großstadt` = "Stadt") %>%
+  as.factor() -> df$Urban2
+
+df_nocity <- filter(df, df$Urban2 == "keine Stadt")
+df_city <- filter(df,df$Urban2 == "Stadt")
+t.test(df_nocity$NB_General,df_city$NB_General)
+
+df %>% 
+  filter(!is.na(Urban2)) %>% 
+  group_by(Urban2) %>% 
+  summarise(mean_NB = mean(NB_General)-1, sem_NB = std.error(NB_General)) %>%
+  ggplot() +
+  aes(x = Urban2, fill = Urban2, weight = mean_NB, ymin = mean_NB - sem_NB, ymax = mean_NB + sem_NB ) +
+  geom_bar( width = 0.5) +
+  scale_fill_manual(values=c(rwthcolor$lightblue, rwthcolor$red)) + 
+  geom_errorbar(width = 0.2) +
+  ylim(0,6) +
+  theme_dark() +
+  labs(title = "Personen aus städtischen und ländlichen Wohnorten unterscheiden sich in ihrer Nutzungsbereitschaft", 
+       subtitle = "Balkendiagramm: Nutzungsbereitschaft im Vergleich zwischen städtischen und nicht-städischen Wohnorten", 
+       x = "Wohnort",
+       y = "Nutzungsbereitschaft",
+       fill = "",
+       caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes") +
+  NULL
+```
+
 
 ### Unterschiedshypothese für die MANCOVA
 
 Personen unterschiedlichen Bildungsniveaus und unterschiedlicher Technikaffinität unterscheiden sich in ihrer Nutzungsbereitschaft gegenüber innovativen Services der Kommunalverwaltung. (Mediansplit)
+```{r}
+df$Edu %>% 
+  recode(`((noch) keinen Schulabschluss)` = "niedrigeres Bildungsniveau",
+         `Hauptschulabschluss` = "niedrigeres Bildungsniveau",
+         `Realschulabschluss` = "niedrigeres Bildungsniveau",
+         `Abitur` = "höheres Bildungsniveau",
+         `Hochschulabschluss` = "höheres Bildungsniveau") %>%
+  as.factor() -> df$Edu2
+
+df_noedu <- filter(df, df$Edu2 == "niedrigeres Bildungsniveau")
+df_yesedu <- filter(df,df$Edu2 == "höheres Bildungsniveau")
+
+jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "ATI"))
+
+jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "ATI"), 
+           emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu"), c("ATI"),
+                                                             c("Edu", "ATI"),
+                                                             c("ATI", "Edu")))
+
+result <- jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "ATI"), 
+                     emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu"), c("ATI"),
+                                                                       c("Edu", "ATI"),
+                                                                       c("ATI", "Edu")))
+
+haupteffekt1 <- result$emm[[1]]$emmTable$asDF
+haupteffekt2 <- result$emm[[2]]$emmTable$asDF
+interaktionseffekt <- result$emm[[3]]$emmTable$asDF
+
+haupteffekt1 %>%
+  ggplot() +
+  aes(x = Edu, y = mean, colour = Edu, ymin = lower, ymax = upper ) +
+  geom_errorbar(width = 0.2, colour = aachen_color("black")) +
+  geom_point(size = 3) +
+  scale_colour_manual(values=aachen_color("black", "black")) + 
+  scale_x_discrete() +
+  ylim(0,10) +
+  theme_gray() +
+  labs(title = "Faktor: Edu", 
+       subtitle = "", 
+       x = "",
+       y = "",
+       colour = "",
+       caption = "") +
+  NULL
+
+haupteffekt2 %>%
+  ggplot() +
+  aes(x = ATI, y = mean, colour = ATI, ymin = lower, ymax = upper ) +
+  geom_errorbar(width = 0.2, colour = aachen_color("black")) +
+  geom_point(size = 3) +
+  scale_colour_manual(values=aachen_color("black", "black")) + 
+  scale_x_discrete() +
+  ylim(0,10) +
+  theme_gray() +
+  labs(title = "Faktor: ATI", 
+       subtitle = "", 
+       x = "",
+       y = "",
+       colour = "",
+       caption = "") +
+  NULL
+
+interaktionseffekt %>% 
+  ggplot() +
+  aes(x = ATI, y = mean, colour = ATI, ymin = lower, ymax = upper, group = ATI ) +
+  geom_errorbar(width = 0.2, colour = aachen_color("black")) +
+  geom_point(size = 3) +
+  geom_line() +
+  scale_colour_manual(values=aachen_color("red","blue")) + 
+  ylim(0,10) +
+  theme_gray() +
+  labs(title = "Faktor: ATI", 
+       subtitle = "", 
+       x = "",
+       y = "Lust zu Tanzen [0 - 10]",
+       colour = "",
+       caption = "") +
+  theme(title = element_text(face = "bold", size = 20), 
+        axis.text.x = element_text(face = "bold", size = 20))
+```
 
 ### Zusammenhangshypothesen
 
 **Alter**  
 Es besteht ein Zusammenhang zwischen dem Alter einer Person und der Nutzungsbereitschaft gegenüber innovativen kommunalen Services.
+```{r}
+cor.test(df$Age,df$NB_General)
 
-**Technophobie – Szenario A**  
-Eine höhere Technophobie steht in Szenario A in einem negativen Zusammenhang mit der Nutzungsbereitschaft gegenüber innovativen Services der Kommunalverwaltung.
+ggplot(df) +
+  aes(x = Age, y = NB_General) +
+  geom_jitter(shape = "circle", size = 1.5, colour = rwthcolor$turquois, width = 0.1, height = 0.1, alpha = 0.5) +
+  geom_smooth(method = "lm", color = rwthcolor$lightblue) +
+  #scale_x_continuous(breaks = c(1:6), limits = c(0.5,6.5)) +
+  #scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
+  labs(x = "Alter", 
+       y = "Nutzungsbereitschaft", 
+       title = "Es besteht ein Zusammenhang zwischen dem Alter einer Person und der Nutzungsbereitschaft", 
+       subtitle = "Jitterplot: Vergleich Nutzungsbereitschaft zwischen Personen unterschiedlchen Alters", 
+       caption = "") +
+  theme_minimal()
+```
+
 
 **Technophobie – Szenario B**  
 Eine höhere Technophobie steht in Szenario B in einem negativen Zusammenhang mit der Nutzungsbereitschaft gegenüber innovativen Services der Kommunalverwaltung.
+```{r}
+cor.test(df$Technophobie,df$NB_Public)
+
+ggplot(df) +
+  aes(x = Technophobie, y = NB_Public) +
+  geom_jitter(shape = "circle", size = 1.5, colour = rwthcolor$turquois, width = 0.1, height = 0.1, alpha = 0.5) +
+  geom_smooth(method = "lm", color = rwthcolor$lightblue) +
+  #scale_x_continuous(breaks = c(1:6), limits = c(0.5,6.5)) +
+  #scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
+  labs(x = "Technophobie", 
+       y = "Nutzungsbereitschaft", 
+       title = "Eine höhere Technophobie hat einen negativen Zusammenhang zur Nutzungsbereitschaft", 
+       subtitle = "Jitterplot: Zusammenhang von Nutzungsbereitschaft und Technophobie ", 
+       caption = "Szenario B") +
+  theme_minimal()
+```
+
+
+**Technophobie – Szenario C**  
+Eine höhere Technophobie steht in Szenario C in einem negativen Zusammenhang mit der Nutzungsbereitschaft gegenüber innovativen Services der Kommunalverwaltung.
+```{r}
+cor.test(df$Technophobie,df$NB_Private)
+
+ggplot(df) +
+  aes(x = Technophobie, y = NB_Private) +
+  geom_jitter(shape = "circle", size = 1.5, colour = rwthcolor$turquois, width = 0.1, height = 0.1, alpha = 0.5) +
+  geom_smooth(method = "lm", color = rwthcolor$lightblue) +
+  #scale_x_continuous(breaks = c(1:6), limits = c(0.5,6.5)) +
+  #scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
+  labs(x = "Technophobie", 
+       y = "Nutzungsbereitschaft", 
+       title = "Eine höhere Technophobie hat einen negative Zusammenhang zur Nutzungsbereitschaft", 
+       subtitle = "Jitterplot: Zusammenhang von Nutzungsbereitschaft und Technophobie", 
+       caption = "Szenario C") +
+  theme_minimal()
+```
+
 
 ### Multiple lineare Regression
 
