@@ -14,6 +14,7 @@ library(plotrix)
 library(jmv)
 library(ggthemes)
 library(ggplot2)
+library(AachenColorPalette)
 
 rwthcolor <- hcictools::rwth.colorpalette()
 
@@ -126,20 +127,24 @@ df$Edu %>%
          `Hochschulabschluss` = "höheres Bildungsniveau") %>%
   as.factor() -> df$Edu2
 
+df$atigroup <- cut(df$ATI,breaks = c(-Inf, median(df$ATI, na.rm = TRUE), Inf), labels = c("niedrig","hoch"))
+
 df_noedu <- filter(df, df$Edu2 == "niedrigeres Bildungsniveau")
 df_yesedu <- filter(df,df$Edu2 == "höheres Bildungsniveau")
 
-jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "ATI"))
 
-jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "ATI"), 
-           emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu"), c("ATI"),
-                                                             c("Edu", "ATI"),
-                                                             c("ATI", "Edu")))
 
-result <- jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "ATI"), 
-                     emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu"), c("ATI"),
-                                                                       c("Edu", "ATI"),
-                                                                       c("ATI", "Edu")))
+jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "atigroup"))
+
+jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "atigroup"), 
+           emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu"), c("atigroup"),
+                                                             c("Edu", "atigroup"),
+                                                             c("atigroup", "Edu")))
+
+result <- jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "atigroup"), 
+                     emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu"), c("atigroup"),
+                                                                       c("Edu", "atigroup"),
+                                                                       c("atigroup", "Edu")))
 
 haupteffekt1 <- result$emm[[1]]$emmTable$asDF
 haupteffekt2 <- result$emm[[2]]$emmTable$asDF
@@ -150,7 +155,7 @@ haupteffekt1 %>%
   aes(x = Edu, y = mean, colour = Edu, ymin = lower, ymax = upper ) +
   geom_errorbar(width = 0.2, colour = aachen_color("black")) +
   geom_point(size = 3) +
-  scale_colour_manual(values=aachen_color("black", "black")) + 
+  scale_colour_manual(values= aachen_color("black", "black")) + 
   scale_x_discrete() +
   ylim(0,10) +
   theme_gray() +
@@ -164,7 +169,7 @@ haupteffekt1 %>%
 
 haupteffekt2 %>%
   ggplot() +
-  aes(x = ATI, y = mean, colour = ATI, ymin = lower, ymax = upper ) +
+  aes(x = atigroup, y = mean, colour = atigroup, ymin = lower, ymax = upper ) +
   geom_errorbar(width = 0.2, colour = aachen_color("black")) +
   geom_point(size = 3) +
   scale_colour_manual(values=aachen_color("black", "black")) + 
@@ -181,7 +186,7 @@ haupteffekt2 %>%
 
 interaktionseffekt %>% 
   ggplot() +
-  aes(x = ATI, y = mean, colour = ATI, ymin = lower, ymax = upper, group = ATI ) +
+  aes(x = atigroup, y = mean, colour = atigroup, ymin = lower, ymax = upper, group =  ) +
   geom_errorbar(width = 0.2, colour = aachen_color("black")) +
   geom_point(size = 3) +
   geom_line() +
@@ -262,24 +267,15 @@ ggplot(df) +
 
 ### Multiple lineare Regression
 
-Die Technikaffinität, das Vertrauen in Technologie sowie die Technophobie beeinflussen gemeinsam die Nutzungsbereitschaft innovativer kommunaler Services.
-
+Die Technikbereitschaft, das Vertrauen in Technologie sowie die Technophobie beeinflussen gemeinsam die Nutzungsbereitschaft innovativer kommunaler Services.
 ```{r}
- 
-jmv::linReg(data = data, 
+jmv::linReg(data = df, 
             dep = c("NB_General"), 
             covs = c("ATI", "TrustTech", "Technophobie"),
             blocks = c("Technophobie", "TrustTech", "ATI"),
             r2Adj = TRUE, stdEst = TRUE, modelTest = TRUE)
 ```
-```{r descriptive, echo=FALSE}
-descriptives <- psych::describe(df)[c(33,34,40),c(3,4,8,9)]
-descriptives$alpha <- c(0.8372396, 0.6054028, 0.8777699)
 
-descriptives[,c(5,1:4)]
-
-
-```
 
 
 ## Messinstrument
