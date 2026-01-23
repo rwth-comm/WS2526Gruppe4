@@ -104,6 +104,7 @@ schluesselliste <- list(
 scores <- scoreItems(schluesselliste, items = raw.short, min = 1, max = 6)
 scores$alpha
   
+
 data <- bind_cols(raw.short, scores$scores)
   
 # Daten exportieren ----

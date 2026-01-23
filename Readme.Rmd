@@ -15,6 +15,7 @@ library(jmv)
 library(ggthemes)
 library(ggplot2)
 library(AachenColorPalette)
+library(dplyr)
 
 rwthcolor <- hcictools::rwth.colorpalette()
 
@@ -33,20 +34,6 @@ df <- readRDS("data/data1a.rds")
 Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen Services der Kommunalverwaltung?
 
 ![Faktorenraum](V2_Faktorenraum_SE_26.png)
-```{r}
-ggplot(df) +
-  aes(x = Age) +
-  geom_histogram(bins = 30L, fill = rwthcolor$blue) +
-  geom_vline(xintercept = mean(df$Age, na.rm = TRUE)) +
-  geom_text(x = mean(df$Age, na.rm = TRUE), y = 50, label = paste0("M = ", round(mean(df$Age, na.rm = TRUE), 2)), angle = 90 , vjust = 1.5) +
-  labs(x = "Alter in Jahren", 
-       y = "Anzahl", 
-       title = paste0("Altersverteilung n = (", nrow(df), ")"), 
-       subtitle = "Histogramm der Altersverteilung", 
-       caption = "30 Bins") +
-  theme_minimal()
-```
-
 
 ## Hypothesen
 
@@ -120,7 +107,7 @@ df %>%
 Personen unterschiedlichen Bildungsniveaus und unterschiedlicher Technikaffinität unterscheiden sich in ihrer Nutzungsbereitschaft gegenüber innovativen Services der Kommunalverwaltung. (Mediansplit)
 ```{r}
 df$Edu %>% 
-  recode(`((noch) keinen Schulabschluss)` = "niedrigeres Bildungsniveau",
+  recode(`(noch) keinen Schulabschluss` = "niedrigeres Bildungsniveau",
          `Hauptschulabschluss` = "niedrigeres Bildungsniveau",
          `Realschulabschluss` = "niedrigeres Bildungsniveau",
          `Abitur` = "höheres Bildungsniveau",
@@ -132,19 +119,17 @@ df$atigroup <- cut(df$ATI,breaks = c(-Inf, median(df$ATI, na.rm = TRUE), Inf), l
 df_noedu <- filter(df, df$Edu2 == "niedrigeres Bildungsniveau")
 df_yesedu <- filter(df,df$Edu2 == "höheres Bildungsniveau")
 
+jmv::ANOVA(df, dep = NB_General, factors = c("Edu2", "atigroup"))
 
+jmv::ANOVA(df, dep = NB_General, factors = c("Edu2", "atigroup"), 
+           emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu2"), c("atigroup"),
+                                                             c("Edu2", "atigroup"),
+                                                             c("atigroup", "Edu2")))
 
-jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "atigroup"))
-
-jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "atigroup"), 
-           emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu"), c("atigroup"),
-                                                             c("Edu", "atigroup"),
-                                                             c("atigroup", "Edu")))
-
-result <- jmv::ANOVA(df, dep = NB_General, factors = c("Edu", "atigroup"), 
-                     emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu"), c("atigroup"),
-                                                                       c("Edu", "atigroup"),
-                                                                       c("atigroup", "Edu")))
+result <- jmv::ANOVA(df, dep = NB_General, factors = c("Edu2", "atigroup"), 
+                     emmPlots = TRUE, emmTables = TRUE, emMeans = list(c("Edu2"), c("atigroup"),
+                                                                       c("Edu2", "atigroup"),
+                                                                       c("atigroup", "Edu2")))
 
 haupteffekt1 <- result$emm[[1]]$emmTable$asDF
 haupteffekt2 <- result$emm[[2]]$emmTable$asDF
@@ -152,10 +137,10 @@ interaktionseffekt <- result$emm[[3]]$emmTable$asDF
 
 haupteffekt1 %>%
   ggplot() +
-  aes(x = Edu, y = mean, colour = Edu, ymin = lower, ymax = upper ) +
-  geom_errorbar(width = 0.2, colour = aachen_color("black")) +
+  aes(x = Edu2, y = mean, colour = Edu2, ymin = lower, ymax = upper ) +
+  geom_errorbar(width = 0.2, colour = rwthcolor$black) +
   geom_point(size = 3) +
-  scale_colour_manual(values= aachen_color("black", "black")) + 
+  scale_colour_manual(values= c(rwthcolor$black, rwthcolor$black)) + 
   scale_x_discrete() +
   ylim(0,10) +
   theme_gray() +
@@ -170,9 +155,9 @@ haupteffekt1 %>%
 haupteffekt2 %>%
   ggplot() +
   aes(x = atigroup, y = mean, colour = atigroup, ymin = lower, ymax = upper ) +
-  geom_errorbar(width = 0.2, colour = aachen_color("black")) +
+  geom_errorbar(width = 0.2, colour = rwthcolor$black) +
   geom_point(size = 3) +
-  scale_colour_manual(values=aachen_color("black", "black")) + 
+  scale_colour_manual(values=c(rwthcolor$black, rwthcolor$black)) + 
   scale_x_discrete() +
   ylim(0,10) +
   theme_gray() +
@@ -187,10 +172,10 @@ haupteffekt2 %>%
 interaktionseffekt %>% 
   ggplot() +
   aes(x = atigroup, y = mean, colour = atigroup, ymin = lower, ymax = upper, group =  ) +
-  geom_errorbar(width = 0.2, colour = aachen_color("black")) +
+  geom_errorbar(width = 0.2, colour = rwthcolor$black) +
   geom_point(size = 3) +
   geom_line() +
-  scale_colour_manual(values=aachen_color("red","blue")) + 
+  scale_colour_manual(values=c(rwthcolor$red, rwthcolor$blue)) + 
   ylim(0,10) +
   theme_gray() +
   labs(title = "Faktor: ATI", 
@@ -275,7 +260,21 @@ jmv::linReg(data = df,
             blocks = c("Technophobie", "TrustTech", "ATI"),
             r2Adj = TRUE, stdEst = TRUE, modelTest = TRUE)
 ```
+## Deskriptive Statistik
+```{r}
 
+ggplot(df) +
+  aes(x = Age) +
+  geom_histogram(bins = 30L, fill = rwthcolor$blue) +
+  geom_vline(xintercept = mean(df$Age, na.rm = TRUE)) +
+  geom_text(x = mean(df$Age, na.rm = TRUE), y = 50, label = paste0("M = ", round(mean(df$Age, na.rm = TRUE), 2)), angle = 90 , vjust = 1.5) +
+  labs(x = "Alter in Jahren", 
+       y = "Anzahl", 
+       title = paste0("Altersverteilung n = (", nrow(df), ")"), 
+       subtitle = "Histogramm der Altersverteilung", 
+       caption = "30 Bins") +
+  theme_minimal()
+```
 
 
 ## Messinstrument
