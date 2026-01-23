@@ -262,7 +262,24 @@ ggplot(df) +
 
 ### Multiple lineare Regression
 
-Die Technikbereitschaft, das Vertrauen in Technologie sowie die Technophobie beeinflussen gemeinsam die Nutzungsbereitschaft innovativer kommunaler Services.
+Die Technikaffinität, das Vertrauen in Technologie sowie die Technophobie beeinflussen gemeinsam die Nutzungsbereitschaft innovativer kommunaler Services.
+
+```{r}
+ 
+jmv::linReg(data = data, 
+            dep = c("NB_General"), 
+            covs = c("ATI", "TrustTech", "Technophobie"),
+            blocks = c("Technophobie", "TrustTech", "ATI"),
+            r2Adj = TRUE, stdEst = TRUE, modelTest = TRUE)
+```
+```{r descriptive, echo=FALSE}
+descriptives <- psych::describe(df)[c(33,34,40),c(3,4,8,9)]
+descriptives$alpha <- c(0.8372396, 0.6054028, 0.8777699)
+
+descriptives[,c(5,1:4)]
+
+
+```
 
 
 ## Messinstrument
