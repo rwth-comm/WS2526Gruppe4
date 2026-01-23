@@ -9,8 +9,10 @@ raw <- load_qualtrics_csv("data/Mastermethoden+WS2526_9.+Januar+2026_11.10.csv")
 
 # Rohdaten filtern ----
 raw %>%
+  filter(DSGVO == 1) %>%
   filter(Progress == 100) %>%
   filter(Status == 0) -> raw
+  
 
 # Überflüssige Variablen entfernen ----
 # Was wir brauchen (Deomgraphie: gender, age, edu, urban; 
@@ -88,12 +90,12 @@ schluesselliste <- list(
   TrustTech    = c("-tia_1n","tia_2","tia_3"),
   Technophobie = c("tp_1","tp_2","tp_3","tp_4","tp_5","tp_6","-tp_7n","-tp_8n","-tp_9n"),
   
-  NB_Grundlage = c("q21_1","q21_2","q21_3"),
-  NB_Oeffentl  = c("q23_1","q23_2","q23_3"),
-  NB_Privat    = c("q22_1","q22_2","q22_3"),
-  NB_Koop      = c("q24_1","q24_2","q24_3"),
+  NB_Basic = c("q21_1","q21_2","q21_3"),
+  NB_Public  = c("q23_1","q23_2","q23_3"),
+  NB_Private    = c("q22_1","q22_2","q22_3"),
+  NB_Coop      = c("q24_1","q24_2","q24_3"),
   
-  NB_Gesamt    = c("q21_1","q21_2","q21_3",
+  NB_General    = c("q21_1","q21_2","q21_3",
                    "q23_1","q23_2","q23_3",
                    "q22_1","q22_2","q22_3",
                    "q24_1","q24_2","q24_3")
@@ -106,3 +108,4 @@ data <- bind_cols(raw.short, scores$scores)
   
 # Daten exportieren ----
 write_rds(data, "data/data1a.rds")
+
