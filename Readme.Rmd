@@ -35,6 +35,27 @@ Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen Services d
 
 ![Faktorenraum](V2_Faktorenraum_SE_26.png)
 
+## Deskriptive Statistik
+```{r}
+ggplot(df) +
+  aes(x = Age) +
+  geom_histogram(bins = 30L, fill = rwthcolor$blue) +
+  geom_vline(xintercept = mean(df$Age, na.rm = TRUE)) +
+  geom_text(x = mean(df$Age, na.rm = TRUE), y = 50, label = paste0("M = ", round(mean(df$Age, na.rm = TRUE), 2)), angle = 90 , vjust = 1.5) +
+  labs(x = "Alter in Jahren", 
+       y = "Anzahl", 
+       title = paste0("Altersverteilung n = (", nrow(df), ")"), 
+       subtitle = "Histogramm der Altersverteilung", 
+       caption = "30 Bins") +
+  theme_minimal()
+
+jmv::descriptives(df, vars=c("Gender", "Age", "Edu", "Urban"), freq = TRUE)
+
+descriptives <- psych::describe(df)[c(28:31, 26,27),c(3,4,8,9)]
+descriptives$alpha <- c(0.77, 0.67, 0.88, 0.59, 0.78, 0.82)
+descriptives[,c(5,1:4)]
+```
+
 ## Hypothesen
 
 ### Unterschiedshypothesen
@@ -260,22 +281,6 @@ jmv::linReg(data = df,
             blocks = c("Technophobie", "TrustTech", "ATI"),
             r2Adj = TRUE, stdEst = TRUE, modelTest = TRUE)
 ```
-## Deskriptive Statistik
-```{r}
-
-ggplot(df) +
-  aes(x = Age) +
-  geom_histogram(bins = 30L, fill = rwthcolor$blue) +
-  geom_vline(xintercept = mean(df$Age, na.rm = TRUE)) +
-  geom_text(x = mean(df$Age, na.rm = TRUE), y = 50, label = paste0("M = ", round(mean(df$Age, na.rm = TRUE), 2)), angle = 90 , vjust = 1.5) +
-  labs(x = "Alter in Jahren", 
-       y = "Anzahl", 
-       title = paste0("Altersverteilung n = (", nrow(df), ")"), 
-       subtitle = "Histogramm der Altersverteilung", 
-       caption = "30 Bins") +
-  theme_minimal()
-```
-
 
 ## Messinstrument
 
