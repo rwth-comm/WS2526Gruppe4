@@ -128,7 +128,7 @@ df %>%
 ```
 
 
-### Unterschiedshypothese für die MANCOVA
+### Unterschiedshypothese für die ANOVA
 
 Personen unterschiedlichen Bildungsniveaus und unterschiedlicher Technikaffinität unterscheiden sich in ihrer Nutzungsbereitschaft gegenüber innovativen Services der Kommunalverwaltung. (Mediansplit)
 ```{r}
