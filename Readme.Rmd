@@ -46,7 +46,7 @@ ggplot(df) +
        y = "Anzahl", 
        title = paste0("Altersverteilung n = (", nrow(df), ")"), 
        subtitle = "Histogramm der Altersverteilung", 
-       caption = "30 Bins") +
+       caption = "") +
   theme_minimal()
 
 jmv::descriptives(df, vars=c("Gender", "Age", "Edu", "Urban"), freq = TRUE)
@@ -102,6 +102,11 @@ df_nocity <- filter(df, df$Urban2 == "keine Stadt")
 df_city <- filter(df,df$Urban2 == "Stadt")
 t.test(df_nocity$NB_General,df_city$NB_General)
 
+jmv::descriptives(df, vars=c("NB_General", "Urban2"), freq = TRUE)
+descriptives <- psych::describe(df)[c(28:31, 26,27),c(3,4,8,9)]
+descriptives$alpha <- c(0.77, 0.67, 0.88, 0.59, 0.78, 0.82)
+descriptives[,c(5,1:4)]
+
 df %>% 
   filter(!is.na(Urban2)) %>% 
   group_by(Urban2) %>% 
@@ -111,13 +116,13 @@ df %>%
   geom_bar( width = 0.5) +
   scale_fill_manual(values=c(rwthcolor$lightblue, rwthcolor$red)) + 
   geom_errorbar(width = 0.2) +
-  ylim(0,6) +
-  theme_dark() +
-  labs(title = "Personen aus städtischen und ländlichen Wohnorten unterscheiden sich in ihrer Nutzungsbereitschaft", 
-       subtitle = "Balkendiagramm: Nutzungsbereitschaft im Vergleich zwischen städtischen und nicht-städischen Wohnorten", 
+  ylim(0,3) +
+  theme_minimal() +
+  labs(title = "Nutzungsbereitschaft nach Wohnort", 
+       subtitle = "Balkendiagramm: Vergleich zwischen städtischen und nicht-städtischen Gebieten", 
        x = "Wohnort",
        y = "Nutzungsbereitschaft",
-       fill = "",
+       fill = "n=422",
        caption = "Fehlerbalken zeigen Standardfehler des Mittelwertes") +
   NULL
 ```
@@ -161,16 +166,16 @@ haupteffekt1 %>%
   aes(x = Edu2, y = mean, colour = Edu2, ymin = lower, ymax = upper ) +
   geom_errorbar(width = 0.2, colour = rwthcolor$black) +
   geom_point(size = 3) +
-  scale_colour_manual(values= c(rwthcolor$black, rwthcolor$black)) + 
+  scale_colour_manual(values= c(rwthcolor$blue, rwthcolor$red)) + 
   scale_x_discrete() +
   ylim(0,10) +
   theme_gray() +
-  labs(title = "Faktor: Edu", 
-       subtitle = "", 
-       x = "",
-       y = "",
+  labs(title = "Haupteffekt 1: Bildungsniveau", 
+       subtitle = "Punktdiagramm: Einfluss Bildungsniveau und Nutzungsbereitschaft", 
+       x = "Bildungsniveau",
+       y = "Nutzungsbereitschaft",
        colour = "",
-       caption = "") +
+       caption = "n=422") +
   NULL
 
 haupteffekt2 %>%
@@ -178,16 +183,16 @@ haupteffekt2 %>%
   aes(x = atigroup, y = mean, colour = atigroup, ymin = lower, ymax = upper ) +
   geom_errorbar(width = 0.2, colour = rwthcolor$black) +
   geom_point(size = 3) +
-  scale_colour_manual(values=c(rwthcolor$black, rwthcolor$black)) + 
+  scale_colour_manual(values=c(rwthcolor$blue, rwthcolor$red)) + 
   scale_x_discrete() +
   ylim(0,10) +
   theme_gray() +
-  labs(title = "Faktor: ATI", 
-       subtitle = "", 
-       x = "",
-       y = "",
+  labs(title = "Haupteffekt 2: Technikaffinität", 
+       subtitle = "Punktdiagramm: Einfluss Technikaffinität und Nutzungsbereitschaft", 
+       x = "Technikaffinität",
+       y = "Nutzungsbereitschaft",
        colour = "",
-       caption = "") +
+       caption = "n=422") +
   NULL
 
 interaktionseffekt %>% 
@@ -196,17 +201,17 @@ interaktionseffekt %>%
   geom_errorbar(width = 0.2, colour = rwthcolor$black) +
   geom_point(size = 3) +
   geom_line() +
-  scale_colour_manual(values=c(rwthcolor$red, rwthcolor$blue)) + 
+  scale_colour_manual(values=c(rwthcolor$blue, rwthcolor$red)) + 
   ylim(0,10) +
   theme_gray() +
-  labs(title = "Faktor: ATI", 
-       subtitle = "", 
-       x = "",
-       y = "Lust zu Tanzen [0 - 10]",
+  labs(title = "Interaktionseffekt: Bildungsniveau, ATI auf Nutzungsbereitschaft", 
+       subtitle = "Punktdiagramm: Einfluss von Bildung & ATI auf Nutzungsbereitschaft", 
+       x = "Bildungsniveau und Technikaffinität",
+       y = "Nutzungsbereitschaft",
        colour = "",
-       caption = "") +
-  theme(title = element_text(face = "bold", size = 20), 
-        axis.text.x = element_text(face = "bold", size = 20))
+       caption = "n=422") +
+  theme(title = element_text(face = "plain", size = 13), 
+        axis.text.x = element_text(face = "plain", size = 13))
 ```
 
 ### Zusammenhangshypothesen
@@ -238,13 +243,13 @@ cor.test(df$Technophobie,df$NB_Public)
 
 ggplot(df) +
   aes(x = Technophobie, y = NB_Public) +
-  geom_jitter(shape = "circle", size = 1.5, colour = rwthcolor$turquois, width = 0.1, height = 0.1, alpha = 0.5) +
-  geom_smooth(method = "lm", color = rwthcolor$lightblue) +
+  geom_jitter(shape = "circle", size = 1.5, colour = rwthcolor$blue, width = 0.1, height = 0.1, alpha = 0.5) +
+  geom_smooth(method = "lm", color = rwthcolor$red) +
   #scale_x_continuous(breaks = c(1:6), limits = c(0.5,6.5)) +
   #scale_y_continuous(breaks = c(1:6), limits = c(0.5, 6.5)) +
   labs(x = "Technophobie", 
        y = "Nutzungsbereitschaft", 
-       title = "Eine höhere Technophobie hat einen negativen Zusammenhang zur Nutzungsbereitschaft", 
+       title = "Einfluss Technophobie und Nutzungsberetischaft", 
        subtitle = "Jitterplot: Zusammenhang von Nutzungsbereitschaft und Technophobie ", 
        caption = "Szenario B") +
   theme_minimal()
