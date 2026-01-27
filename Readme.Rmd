@@ -51,8 +51,8 @@ ggplot(df) +
 
 jmv::descriptives(df, vars=c("Gender", "Age", "Edu", "Urban"), freq = TRUE)
 
-descriptives <- psych::describe(df)[c(28:31, 26,27),c(3,4,8,9)]
-descriptives$alpha <- c(0.77, 0.67, 0.88, 0.59, 0.78, 0.82)
+descriptives <- psych::describe(df)[c(33,34,40),c(3,4,8,9)]
+descriptives$alpha <- c(0.8372396, 0.6054028, 0.8777699)
 descriptives[,c(5,1:4)]
 ```
 
@@ -239,7 +239,7 @@ ggplot(df) +
 **Technophobie – Szenario B**  
 Eine höhere Technophobie steht in Szenario B in einem negativen Zusammenhang mit der Nutzungsbereitschaft gegenüber innovativen Services der Kommunalverwaltung.
 ```{r}
-cor.test(df$Technophobie,df$NB_Public)
+cor.test(df$Technophobie,df$NB_Public, method= "spearman")
 
 ggplot(df) +
   aes(x = Technophobie, y = NB_Public) +
@@ -251,7 +251,7 @@ ggplot(df) +
        y = "Nutzungsbereitschaft", 
        title = "Einfluss Technophobie und Nutzungsberetischaft", 
        subtitle = "Jitterplot: Zusammenhang von Nutzungsbereitschaft und Technophobie ", 
-       caption = "Szenario B") +
+       caption = "Szenario B, n=422") +
   theme_minimal()
 ```
 
