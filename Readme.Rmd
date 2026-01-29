@@ -27,14 +27,11 @@ df <- readRDS("data/data1a.rds")
 
 ```
 
-
-
-
 ## Forschungsfrage 
 Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen Services der Kommunalverwaltung?
 
 ## Faktorenraum
-![Faktorenraum](V2_Faktorenraum_SE_26.png)
+![Faktorenraum](V2_ Faktorenraum_SE_26.png)
 
 ## Deskriptive Statistik
 ```{r}
