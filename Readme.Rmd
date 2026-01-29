@@ -4,6 +4,10 @@ author: "GKO"
 date: "2025-10-30"
 output: md_document
 ---
+## Teammitglieder 
+* Gina Kötter
+* Karolina Braun 
+* Samira Eisenberg
 
 ```{r}
 library(tidyverse)
@@ -24,17 +28,13 @@ df <- readRDS("data/data1a.rds")
 ```
 
 
-## Teammitglieder 
-* Gina Kötter
-* Karolina Braun 
-* Samira Eisenberg
 
 
 ## Forschungsfrage 
 Welche Faktoren beeinflussen die Nutzungsbereitschaft von innovativen Services der Kommunalverwaltung?
 
 ## Faktorenraum
-![V2 Faktorenraum](V2_Faktorenraum_SE_26.png)
+![Faktorenraum](V2_Faktorenraum_SE_26.png)
 
 ## Deskriptive Statistik
 ```{r}
