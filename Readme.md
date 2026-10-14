@@ -1,8 +1,8 @@
 ## Teammitglieder
 
--   Gina Kötter
--   Karolina Braun
--   Samira Eisenberg
+-   Gina
+-   Karolina
+-   Samira
 
 ## Forschungsfrage
 
